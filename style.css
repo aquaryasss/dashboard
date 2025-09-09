@@ -1,0 +1,47 @@
+:root {
+    --cosmic-latte: #faf4e4;
+    --night: #121212;
+    --lavender-pink: #f5b8da;
+    --amaranth-pink: #e09cc3;
+    --naples-yellow: #f3da61;
+    --naples-yellow-dark: #e8c84d;
+    --olivine: #9aab64;
+    --moss-green: #808e53;
+    --powder-blue: #b6caeb;
+    --vista-blue: #8aa2c8;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    background-color: var(--cosmic-latte);
+    gap: 15px;
+    text-align: center;
+}
+
+#grid-container div {
+    background-color: var(--lavender-pink);
+    color: var(--night);
+}
+
+#header, #message {
+    grid-column: 2 / 5;
+}
+
+#sidebar {
+    grid-column: 1 / 2;
+    grid-row: 1 / 6;
+}
+
+#courses {
+    grid-column: 2 / 4;
+}
+
+#announcements, #online-users {
+    grid-column: 4 / 5;
+}
