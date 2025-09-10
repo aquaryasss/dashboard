@@ -30,17 +30,19 @@
 html, body {
     margin: 0;
     padding: 0;
-    overflow: hidden;
+}
+
+body {
+    background-color: var(--cosmic-latte);
 }
 
 #grid-container {
     display: grid;
-    grid-template-columns: minmax(195px, 320px) 1fr minmax(255px, 500px);
-    grid-template-rows: auto auto 1fr;
+    grid-template-columns: minmax(195px, 320px) 1fr ;
     background-color: var(--cosmic-latte);
-    text-align: center;
     width: 100vw;
     height: 100vh;
+    overflow: hidden;
 } 
 
 #sidebar {
@@ -51,7 +53,6 @@ html, body {
     display: flex;
     flex-direction: column;
     grid-column: 1 / 2;
-    grid-row: 1 / 4;
 }
 
 .option {
@@ -78,6 +79,7 @@ html, body {
     margin-top: 10px;
     margin-bottom: 0;
     padding: 0;
+    text-align: center;
 }
 
 #group1 {
@@ -100,15 +102,31 @@ html, body {
     color: var(--lavender-pink);
 }
 
-#header, #message {
-    grid-column: 2 / 4;
+#main-content {
+    overflow-y: auto;
+    display: grid;
+    grid-template-columns: 1fr minmax(255px, 500px);
+    grid-template-rows: auto auto 1fr;
+    align-content: start;
+}
+
+#main-content-header {
     position: sticky;
+    top: 0;
+    grid-column: 1 / 3;
+    z-index: 10;
+    background-color: var(--cosmic-latte);
+}
+
+#header, #message {
+    grid-column: auto;
+    position: static;
 }
 
 #header {
     display: flex;
     align-items: center;
-    padding: 35px 20px 0 35px;
+    padding: 25px 20px 0 35px;
 }
 
 #header svg {
@@ -162,7 +180,7 @@ html, body {
 
 #greeting {
     font-family: 'Garden Flower';
-    font-size: 3.5rem;
+    font-size: 2.5rem;
     color: var(--night);
     margin: 0;
 }
@@ -171,13 +189,15 @@ html, body {
     font-family: 'Josefin Sans';
     font-size: 1rem;
     color: var(--night);
+    margin-top: 8px;
+    margin-bottom: 8px;
 }
 
 #courses {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     grid-auto-rows: 1fr;
-    grid-column: 2 / 3;
+    grid-column: 1 / 2;
     gap: 15px;
     padding: 35px 0 35px 35px;
 }
@@ -187,13 +207,15 @@ html, body {
     font-size: 2rem;
     color: var(--night);
     font-weight: 700;
+    text-align: center;
+    margin-bottom: 15px;
 }
 
 #courses .course-name + p {
     font-family: 'Josefin Sans';
-    font-size: 1rem;
+    font-size: 0.9rem;
     color: var(--night);
-    margin: 20px;
+    margin: 0 20px 0 20px;
     text-align: left;
 } 
 
@@ -221,7 +243,7 @@ html, body {
 #right-column {
     display: grid;
     grid-template-rows: 1fr 1fr;
-    grid-column: 3 / 4;
+    grid-column: 2 / 3;
 }
 
 #announcements, #online-users {
@@ -236,15 +258,16 @@ html, body {
     margin: 15px;
     border-radius: 15px;
     padding: 20px;
-    gap: 20px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .title {
     font-family: 'Josefin Sans';
-    font-size: 3rem;
+    font-size: 2.6rem;
     color: var(--night);
     margin-top: 20px;
     margin-bottom: 0;
+    text-align: center;
 }
 
 .announcement {
@@ -252,7 +275,12 @@ html, body {
     flex-direction: column;
     align-items: flex-start;
     border-bottom: 1px solid var(--olivine);
-    padding-bottom: 5px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+.announcement.bottom {
+    border-bottom: none;
 }
 
 .content, .headline {
