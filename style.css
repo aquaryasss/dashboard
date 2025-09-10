@@ -1,4 +1,5 @@
 :root {
+    --white: #ffffff;
     --cosmic-latte: #faf4e4;
     --night: #121212;
     --lavender-pink: #f5b8da;
@@ -11,31 +12,135 @@
     --vista-blue: #8aa2c8;
 }
 
-* {
+@font-face {
+    font-family: 'Garden Flower';
+    src: 
+        url('fonts/gardenflower.woff') format('woff');
+        url('fonts/gardenflower.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Josefin Sans';
+    src: 
+        url('fonts/josefinsans.woff') format('woff');
+        url('fonts/josefinsans.woff2') format('woff2');
+}
+
+html, body {
     margin: 0;
     padding: 0;
+    overflow: hidden;
 }
 
 #grid-container {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: minmax(195px, 320px) repeat(3, 1fr);
+    grid-template-rows: auto auto 1fr;
     background-color: var(--cosmic-latte);
-    gap: 15px;
     text-align: center;
+    width: 100vw;
+    height: 100vh;
+} 
+
+#sidebar {
+    background-color: var(--night);
+    color: var(--cosmic-latte);
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    display: flex;
+    flex-direction: column;
+    grid-column: 1 / 2;
+    grid-row: 1 / 6;
 }
 
-#grid-container div {
-    background-color: var(--lavender-pink);
-    color: var(--night);
+.option {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 7px;
+    margin-left: 35px;
+    cursor: pointer;
+}
+
+.option svg {
+    fill: var(--cosmic-latte);
+}
+
+.option p {
+    font-family: 'Josefin Sans';
+}
+
+#logo {
+    color: var(--white);
+    font-family: 'Garden Flower';
+    font-size: 5rem;
+    margin-top: 10px;
+    margin-bottom: 0;
+    padding: 0;
+}
+
+#group1 {
+    margin-top: 20px;
+}
+
+#group2 {
+    margin-top: auto;
+}
+
+.option.dashboard {
+    border-left: 3px solid var(--lavender-pink);
+}
+
+.option.dashboard svg {
+    fill: var(--lavender-pink);
+}
+
+#dashboard {
+    color: var(--lavender-pink);
 }
 
 #header, #message {
     grid-column: 2 / 5;
 }
 
-#sidebar {
-    grid-column: 1 / 2;
-    grid-row: 1 / 6;
+#header {
+    display: flex;
+    align-items: center;
+    padding: 35px 20px 0 35px;
+}
+
+#header svg {
+    fill: var(--night);
+}
+
+#search-icon {
+    background-color: var(--lavender-pink);
+    border-radius: 25px;
+    padding: 5px;
+    margin-right: 15px;
+}
+
+#search-bar {
+    background-color: transparent;
+    border: 2px solid var(--lavender-pink);
+    border-radius: 13px;
+    width: 50%;
+    height: 30px;
+}
+
+#header-icons {
+    margin-left: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 7px;
+}
+
+#header-icons svg {
+    background-color: var(--night);
+    fill: var(--white);
+    border-radius: 25px;
+    padding: 5px;
 }
 
 #courses {
@@ -44,4 +149,9 @@
 
 #announcements, #online-users {
     grid-column: 4 / 5;
+}
+
+.fa-window {
+    font-size: 24px;
+    color: #333;
 }
