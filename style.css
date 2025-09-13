@@ -250,15 +250,18 @@ body {
     grid-column: auto;
 }
 
-#announcements-container {
+#announcements-container, #online-users-container{
     display: flex;
     flex-direction: column;
-    align-items: center;
     background-color: var(--cosmic-latte-dark);
     margin: 15px;
     border-radius: 15px;
     padding: 20px;
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+#announcements-container {
+    align-items: center;
 }
 
 .title {
@@ -297,4 +300,48 @@ body {
 
 .content{
     font-size: 0.8rem;
+}
+
+#online-users-container {
+    align-items: flex-start;
+    gap: 8px;
+}
+
+.user {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 3px;
+}
+
+.user-info p {
+    margin: 0;
+    font-family: 'Josefin Sans';
+    font-size: 0.8rem;
+}
+
+.user svg {
+    fill: var(--night);
+    border-radius: 50%;
+    box-sizing: border-box;
+    padding: 5px 5px 5px 5px;
+}
+
+#online-users-container .user:nth-child(1) svg {
+    background-color: var(--powder-blue);
+}
+
+#online-users-container .user:nth-child(2) svg {
+    background-color: var(--olivine);
+}
+
+#online-users-container .user:nth-child(3) svg {
+    background-color: var(--lavender-pink);
 }
