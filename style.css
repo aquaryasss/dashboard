@@ -226,18 +226,22 @@ body {
 
 #cmsc-110, #cmsc-192 {
     background-color: var(--naples-yellow);
+    border-left: 12px solid var(--naples-yellow-dark);
 }
 
 #cmsc-124, #cmsc-194 {
     background-color: var(--lavender-pink);
+    border-left: 12px solid var(--amaranth-pink);
 }
 
 #cmsc-128 {
     background-color: var(--olivine);
+    border-left: 12px solid var(--moss-green);
 }
 
 #cmsc-142 {
     background-color: var(--powder-blue);
+    border-left: 12px solid var(--vista-blue);
 }
 
 #right-column {
